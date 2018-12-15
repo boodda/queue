@@ -15,22 +15,24 @@ public:
 	bool IsFull();
 
 };
-TQueue::TQueue(int maxSize){
+template<class T>
+TQueue<T>::TQueue(int maxSize){
 	pMem = new T[maxSize];
 	memSize = maxSize;
 	lptr = rptr = size = 0;
 }
-TQueue::~TQueue(){
+template<class T>
+TQueue<T>::~TQueue(){
 	delete[] pMem;
 }
-
-void TQueue::Push(T elem){
+template<class T>
+void TQueue<T>::Push(T elem){
 	pMem[rptr]=elem;
 	rptr=(rptr+1)%memSize;
 	size+=1;
 }
-
-T TQueue::Pop(){
+template<class T>
+T TQueue<T>::Pop(){
 	T res = pMem[lptr];
 	lptr=(lptr+1)%memSize;
 	size--;
