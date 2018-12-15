@@ -4,7 +4,7 @@ template<class T>
 class TQueue{
 	T* pMem;
 	int memSize;
-	int lpt,rptr,size;
+	int lptr,rptr,size;
 
 public:
 	TQueue(int maxSize = 10);
@@ -23,4 +23,9 @@ TQueue::TQueue(int maxSize){
 TQueue::~TQueue(){
 	delete[] pMem;
 }
+
+TQueue::Push(T elem){
+
+}
+
 #endif
