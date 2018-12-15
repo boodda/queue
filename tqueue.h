@@ -24,8 +24,17 @@ TQueue::~TQueue(){
 	delete[] pMem;
 }
 
-TQueue::Push(T elem){
+void TQueue::Push(T elem){
+	pMem[rptr]=elem;
+	rptr=(rptr+1)%memSize;
+	size+=1;
+}
 
+T TQueue::Pop(){
+	T res = pMem[lptr];
+	lptr=(lptr+1)%memSize;
+	size--;
+	return res;
 }
 
 #endif
