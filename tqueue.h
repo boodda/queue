@@ -39,4 +39,13 @@ T TQueue<T>::Pop(){
 	return res;
 }
 
+template<class T>
+bool TQueue<T>::IsEmpty(){
+	return size<=0;
+}
+template<class T>
+bool TQueue<T>::IsFull(){
+	return size>=memSize;
+}
+
 #endif
